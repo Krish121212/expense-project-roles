@@ -2,3 +2,5 @@ login_host: 107.23.26.206
 login_user: root
 login_password: Krish@1212
 DB_HOST: 107.23.26.206
+component: backend
+app_location: /app

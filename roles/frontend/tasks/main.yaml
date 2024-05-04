@@ -9,26 +9,10 @@
     state: started
     enabled: yes
 
-- name: Deleting content in a directory
-  ansible.builtin.file:
-    state: absent
-    path: /usr/share/nginx/html/
-
-- name: create html directory
-  ansible.builtin.file:
-    path: /usr/share/nginx/html
-    state: directory
-
-- name: Download frontend code
-  ansible.builtin.get_url:
-    url: https://expense-builds.s3.us-east-1.amazonaws.com/expense-frontend-v2.zip
-    dest: /tmp/frontend.zip
-
-- name: unarchiving the zip file
-  ansible.builtin.unarchive:
-    src: /tmp/frontend.zip
-    dest: /usr/share/nginx/html
-    remote_src: yes
+- name: run common app-common file
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: app-common
 
 - name: copying expense config file
   ansible.builtin.template:
