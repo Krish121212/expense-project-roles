@@ -17,6 +17,8 @@
     name: expense
 
 - name: run app-common file
+  tags:
+  - deployment
   ansible.builtin.import_role:
     name: common
     tasks_from: app-common
