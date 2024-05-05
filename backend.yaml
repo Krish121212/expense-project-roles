@@ -1,5 +1,5 @@
 - name: configure Backend server
-  hosts: backend
+  hosts: localhost
   become: yes
   vars_files:
   - credentials.yaml
