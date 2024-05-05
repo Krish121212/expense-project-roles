@@ -16,7 +16,7 @@
   ansible.builtin.user:
     name: expense
 
-- name: run common app-common file
+- name: run app-common file
   ansible.builtin.import_role:
     name: common
     tasks_from: app-common
@@ -52,7 +52,9 @@
     daemon_reload: true
 
 - name: start and enable backend service
+  tags:
+  - deployment
   ansible.builtin.service:
     name: backend
-    state: started
+    state: restarted
     enabled: yes

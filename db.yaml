@@ -1,5 +1,5 @@
 - name: configure DB server
-  hosts: db
+  hosts: localhost  
   become: yes
   vars_files:
   - credentials.yaml
