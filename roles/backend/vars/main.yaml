@@ -1,6 +1,6 @@
-login_host: 34.229.162.163
+login_host: db.devopskk.online
 login_user: root
 login_password: Krish@1212
-DB_HOST: 34.229.162.163
+DB_HOST: db.devopskk.online
 component: backend
 app_location: /app
